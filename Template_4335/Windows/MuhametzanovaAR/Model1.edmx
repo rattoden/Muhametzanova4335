@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ExcelModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Uslugi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="IdZakaza" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DataSozdaniya" Type="nvarchar(max)" />
+          <Property Name="VremyaZakaza" Type="nvarchar(max)" />
+          <Property Name="IdClienta" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Uslugii" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Statuss" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DataZakritiya" Type="nvarchar(max)" />
+          <Property Name="VremyaProkata" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Хранилище ExcelModelContainer">
+          <EntitySet Name="Uslugi" EntityType="Self.Uslugi" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ExcelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Uslugi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdZakaza" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataSozdaniya" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VremyaZakaza" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdClienta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Uslugii" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Statuss" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataZakritiya" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VremyaProkata" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="ExcelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Uslugi" EntityType="Self.Uslugi" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ExcelModelContainer" CdmEntityContainer="ExcelEntities">
+          <EntitySetMapping Name="Uslugi">
+            <EntityTypeMapping TypeName="ExcelModel.Uslugi">
+              <MappingFragment StoreEntitySet="Uslugi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdZakaza" ColumnName="IdZakaza" />
+                <ScalarProperty Name="DataSozdaniya" ColumnName="DataSozdaniya" />
+                <ScalarProperty Name="VremyaZakaza" ColumnName="VremyaZakaza" />
+                <ScalarProperty Name="IdClienta" ColumnName="IdClienta" />
+                <ScalarProperty Name="Uslugii" ColumnName="Uslugii" />
+                <ScalarProperty Name="Statuss" ColumnName="Statuss" />
+                <ScalarProperty Name="DataZakritiya" ColumnName="DataZakritiya" />
+                <ScalarProperty Name="VremyaProkata" ColumnName="VremyaProkata" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

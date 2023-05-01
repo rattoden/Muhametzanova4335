@@ -6,9 +6,29 @@
         xmlns:local="clr-namespace:Template_4335.Windows"
         mc:Ignorable="d"
         Title="Muhametzanova_4335" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="#0e95ff"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <TextBlock Text="Изменения выполнил студент группы 4335 Мухаметзянова Алина"
-               HorizontalAlignment="Center" VerticalAlignment="Center"
-               FontSize="30" TextWrapping="Wrap" FontStyle="Italic"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Мухаметзянова Алина Риязовна. 5 вариант." Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" />
+            <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" />
+            <WrapPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="ExcelPageBtn" Content="Excel страница" Margin="0 0 50 0" Click="ExcelPageBtn_Click" />
+                <Button x:Name="WordPageBtn" Content="Word страница" Margin="0 0 50 0" Click="WordPageBtn_Click" />
+                <Button x:Name="DeleteDataBtn" Content="Очистка данных" Click="DeleteDataBtn_Click" />
+            </WrapPanel>
+        </Grid>
     </Grid>
 </Window>
